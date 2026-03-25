@@ -29,7 +29,7 @@ class UniversityRecycleZone extends JFrame {
 
     //Variables
     JFrame MainF;
-    JPanel header;
+    JPanel header, leftPanel;
     JDialog Login, Contribution, History;
     JLabel UniversityL, WelcomeL, UserL, AdminL, LoginL, UsernameL, PasswordL, ContributionL, SIDL, MTypeL, QuantityL;
     JButton AdminButton, AddContriButton, ViewContriButton, ClearButton, EnterButton, CancelButton, SearchButton;
@@ -61,6 +61,12 @@ class UniversityRecycleZone extends JFrame {
         header.setBounds(0, 0, 1500, 90);
         header.setLayout(null);
         
+        //Left panel Config
+        leftPanel = new JPanel();
+        leftPanel.setBackground(Color.yellow);
+        leftPanel.setBounds(0, 0, 200, 800);
+        leftPanel.setLayout(null);
+        
         //Headr Title config 
         UniversityL = new JLabel("University Recycle Zone");
         UniversityL.setBounds(30, 20, 500, 50);
@@ -83,11 +89,11 @@ class UniversityRecycleZone extends JFrame {
         //JTable
         //Add Contribution Button
         ImageIcon icon1 = new ImageIcon("RecycleButton.png");
-        Image img1 = icon1.getImage().getScaledInstance(400, 400, Image.SCALE_SMOOTH);
+        Image img1 = icon1.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon1 = new ImageIcon(img1);
         AddContriButton = new JButton(scaledIcon1);
-        AddContriButton.setBounds(300, 290, 400, 400);
-
+        AddContriButton.setBounds(50, 290, 100, 100);
+        
         //Add Contribution Dialog
         AddContriButton.addActionListener(e -> {
             Contribution.setSize(500, 350);
@@ -136,10 +142,10 @@ class UniversityRecycleZone extends JFrame {
 
         //View Contribution
         ImageIcon icon2 = new ImageIcon("HistoryButton.png");
-        Image img2 = icon2.getImage().getScaledInstance(400, 400, Image.SCALE_SMOOTH);
+        Image img2 = icon2.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon2 = new ImageIcon(img2);
         ViewContriButton = new JButton(scaledIcon2);
-        ViewContriButton.setBounds(800, 290, 400, 400);
+        ViewContriButton.setBounds(50, 450, 100, 100);
 
         //View Contribution
         ViewContriButton.addActionListener(e -> {
@@ -170,9 +176,11 @@ class UniversityRecycleZone extends JFrame {
         header.add(UniversityL);
         header.add(AdminL);
         header.add(AdminButton);
-        MainF.add(WelcomeL);;
-        MainF.add(AddContriButton);
-        MainF.add(ViewContriButton);
+        MainF.add(WelcomeL);
+        
+        MainF.add(leftPanel);
+        leftPanel.add(AddContriButton);
+        leftPanel.add(ViewContriButton);
 
         //Frame Settings
         MainF.setSize(1500, 800);

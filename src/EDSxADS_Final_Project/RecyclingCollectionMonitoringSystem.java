@@ -19,7 +19,7 @@ public class RecyclingCollectionMonitoringSystem {
 
     //Main Method
     public static void main(String[] args) {
-        new WelcomeFrame();
+        new UniversityRecycleZone();
     }
 
 }
@@ -56,28 +56,29 @@ class UniversityRecycleZone extends JFrame {
         Mbackground.setLayout(null);
         MainF.setContentPane(Mbackground);
 
-        //Header
+        //Header Config
         header.setBackground(Color.green);
-        header.setBounds(0, 0, 1500, 50);
+        header.setBounds(0, 0, 1500, 90);
         header.setLayout(null);
+        
+        //Headr Title config 
         UniversityL = new JLabel("University Recycle Zone");
-        UniversityL.setBounds(10, 0, 500, 50);
+        UniversityL.setBounds(30, 20, 500, 50);
         UniversityL.setFont(new Font("Arial Black", Font.BOLD, 30));
+        
+        //Login button
         AdminL = new JLabel("Admin");
-        AdminL.setBounds(1260, 5, 120, 40);
+        AdminL.setBounds(1240, 25, 120, 40);
         AdminL.setFont(new Font("Arial", Font.BOLD, 30));
         AdminButton = new JButton("Login");
         AdminButton.setFont(new Font("Arial", Font.BOLD, 20));
-        AdminButton.setBounds(1360, 5, 120, 40);
+        AdminButton.setBounds(1340, 25, 120, 40);
         new LoginFunction();
 
         //Title
-        WelcomeL = new JLabel("WELCOME");
-        WelcomeL.setBounds(450, 65, 600, 90);
-        WelcomeL.setFont(new Font("Arial Black", Font.BOLD, 100));
-        UserL = new JLabel("USER");
-        UserL.setBounds(615, 175, 500, 80);
-        UserL.setFont(new Font("Arial Black", Font.BOLD, 80));
+        WelcomeL = new JLabel("WELCOME USER");
+        WelcomeL.setBounds(450, 95, 700, 90);
+        WelcomeL.setFont(new Font("Arial Black", Font.BOLD, 70));
 
         //JTable
         //Add Contribution Button
@@ -95,12 +96,13 @@ class UniversityRecycleZone extends JFrame {
             ContributionL = new JLabel("CONTRIBUTION");
             ContributionL.setBounds(130, 10, 300, 50);
             ContributionL.setFont(new Font("Arial Black", Font.BOLD, 25));
+            
             SIDL = new JLabel("School ID: ");
             SIDL.setBounds(63, 40, 70, 80);
             IDfield = new JTextField(100);
             IDfield.setBounds(130, 65, 300, 30);
             MTypeL = new JLabel("Material Type: ");
-            MTypeL.setBounds(40, 93, 100, 80);
+            MTypeL.setBounds(20, 93, 100, 80);
             MTypeBox = new JComboBox<>(Mtype);
             MTypeBox.setBounds(130, 120, 300, 30);
             QuantityL = new JLabel("Quantity: ");
@@ -168,8 +170,7 @@ class UniversityRecycleZone extends JFrame {
         header.add(UniversityL);
         header.add(AdminL);
         header.add(AdminButton);
-        MainF.add(WelcomeL);
-        MainF.add(UserL);
+        MainF.add(WelcomeL);;
         MainF.add(AddContriButton);
         MainF.add(ViewContriButton);
 
